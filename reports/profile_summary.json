@@ -1,0 +1,723 @@
+{
+  "generated_at": "2026-11-07 01:34:01",
+  "airlines": {
+    "metadata": {
+      "filepath": "C:\\Users\\soham\\OneDrive\\Desktop\\FlightPulse\\scripts\\..\\data\\raw\\airlines.csv",
+      "filename": "airlines.csv",
+      "size_bytes": 359,
+      "size_mb": 0.0,
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "headers": [
+        "IATA_CODE",
+        "AIRLINE"
+      ],
+      "column_count": 2
+    },
+    "total_records": 14,
+    "duplicate_rows": 0,
+    "duplicate_check_method": "Exact full-dataset dataframe deduplication",
+    "columns": {
+      "IATA_CODE": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 14
+      },
+      "AIRLINE": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 14
+      }
+    },
+    "records": [
+      {
+        "IATA_CODE": "UA",
+        "AIRLINE": "United Air Lines Inc."
+      },
+      {
+        "IATA_CODE": "AA",
+        "AIRLINE": "American Airlines Inc."
+      },
+      {
+        "IATA_CODE": "US",
+        "AIRLINE": "US Airways Inc."
+      },
+      {
+        "IATA_CODE": "F9",
+        "AIRLINE": "Frontier Airlines Inc."
+      },
+      {
+        "IATA_CODE": "B6",
+        "AIRLINE": "JetBlue Airways"
+      },
+      {
+        "IATA_CODE": "OO",
+        "AIRLINE": "Skywest Airlines Inc."
+      },
+      {
+        "IATA_CODE": "AS",
+        "AIRLINE": "Alaska Airlines Inc."
+      },
+      {
+        "IATA_CODE": "NK",
+        "AIRLINE": "Spirit Air Lines"
+      },
+      {
+        "IATA_CODE": "WN",
+        "AIRLINE": "Southwest Airlines Co."
+      },
+      {
+        "IATA_CODE": "DL",
+        "AIRLINE": "Delta Air Lines Inc."
+      },
+      {
+        "IATA_CODE": "EV",
+        "AIRLINE": "Atlantic Southeast Airlines"
+      },
+      {
+        "IATA_CODE": "HA",
+        "AIRLINE": "Hawaiian Airlines Inc."
+      },
+      {
+        "IATA_CODE": "MQ",
+        "AIRLINE": "American Eagle Airlines Inc."
+      },
+      {
+        "IATA_CODE": "VX",
+        "AIRLINE": "Virgin America"
+      }
+    ]
+  },
+  "airports": {
+    "metadata": {
+      "filepath": "C:\\Users\\soham\\OneDrive\\Desktop\\FlightPulse\\scripts\\..\\data\\raw\\airports.csv",
+      "filename": "airports.csv",
+      "size_bytes": 23867,
+      "size_mb": 0.02,
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "headers": [
+        "IATA_CODE",
+        "AIRPORT",
+        "CITY",
+        "STATE",
+        "COUNTRY",
+        "LATITUDE",
+        "LONGITUDE"
+      ],
+      "column_count": 7
+    },
+    "total_records": 322,
+    "duplicate_rows": 0,
+    "duplicate_check_method": "Exact full-dataset dataframe deduplication",
+    "columns": {
+      "IATA_CODE": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 322
+      },
+      "AIRPORT": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 322
+      },
+      "CITY": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 308
+      },
+      "STATE": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 54
+      },
+      "COUNTRY": {
+        "dtype": "str",
+        "inferred_type": "TEXT",
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "unique_count": 1
+      },
+      "LATITUDE": {
+        "dtype": "float64",
+        "inferred_type": "REAL",
+        "null_count": 3,
+        "null_percentage": 0.9317,
+        "unique_count": 319
+      },
+      "LONGITUDE": {
+        "dtype": "float64",
+        "inferred_type": "REAL",
+        "null_count": 3,
+        "null_percentage": 0.9317,
+        "unique_count": 319
+      }
+    },
+    "unique_iata_codes": 322,
+    "unique_states": 54,
+    "unique_countries": [
+      "USA"
+    ],
+    "missing_coordinates_airports": [
+      "ECP",
+      "PBG",
+      "UST"
+    ]
+  },
+  "flights": {
+    "metadata": {
+      "filepath": "C:\\Users\\soham\\OneDrive\\Desktop\\FlightPulse\\scripts\\..\\data\\raw\\flights.csv",
+      "filename": "flights.csv",
+      "size_bytes": 592406591,
+      "size_mb": 564.96,
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "headers": [
+        "YEAR",
+        "MONTH",
+        "DAY",
+        "DAY_OF_WEEK",
+        "AIRLINE",
+        "FLIGHT_NUMBER",
+        "TAIL_NUMBER",
+        "ORIGIN_AIRPORT",
+        "DESTINATION_AIRPORT",
+        "SCHEDULED_DEPARTURE",
+        "DEPARTURE_TIME",
+        "DEPARTURE_DELAY",
+        "TAXI_OUT",
+        "WHEELS_OFF",
+        "SCHEDULED_TIME",
+        "ELAPSED_TIME",
+        "AIR_TIME",
+        "DISTANCE",
+        "WHEELS_ON",
+        "TAXI_IN",
+        "SCHEDULED_ARRIVAL",
+        "ARRIVAL_TIME",
+        "ARRIVAL_DELAY",
+        "DIVERTED",
+        "CANCELLED",
+        "CANCELLATION_REASON",
+        "AIR_SYSTEM_DELAY",
+        "SECURITY_DELAY",
+        "AIRLINE_DELAY",
+        "LATE_AIRCRAFT_DELAY",
+        "WEATHER_DELAY"
+      ],
+      "column_count": 31
+    },
+    "total_records": 5819079,
+    "duplicate_rows": 0,
+    "duplicate_check_method": "Global row hashing across all 5,819,079 records (100% full dataset)",
+    "min_date": "2015-01-01",
+    "max_date": "2015-12-31",
+    "calendar_year": 2015,
+    "unique_airlines_count": 14,
+    "unique_airlines": [
+      "AA",
+      "AS",
+      "B6",
+      "DL",
+      "EV",
+      "F9",
+      "HA",
+      "MQ",
+      "NK",
+      "OO",
+      "UA",
+      "US",
+      "VX",
+      "WN"
+    ],
+    "unique_origin_airports_count": 628,
+    "unique_dest_airports_count": 629,
+    "origin_formats_by_month": {
+      "1": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "2": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "3": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "4": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "5": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "6": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "7": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "8": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "9": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "10": {
+        "has_iata": false,
+        "has_dot_id": true
+      },
+      "11": {
+        "has_iata": true,
+        "has_dot_id": false
+      },
+      "12": {
+        "has_iata": true,
+        "has_dot_id": false
+      }
+    },
+    "columns": {
+      "YEAR": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "MONTH": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "DAY": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "DAY_OF_WEEK": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "AIRLINE": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "FLIGHT_NUMBER": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "TAIL_NUMBER": {
+        "null_count": 14721,
+        "total_records": 5819079,
+        "null_percentage": 0.253,
+        "null_classification": "Unassigned Aircraft / Cancelled Before Tail Assignment",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "ORIGIN_AIRPORT": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "DESTINATION_AIRPORT": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "SCHEDULED_DEPARTURE": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "DEPARTURE_TIME": {
+        "null_count": 86153,
+        "total_records": 5819079,
+        "null_percentage": 1.4805,
+        "null_classification": "Operational Missingness (Flight cancelled before departure roll)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "DEPARTURE_DELAY": {
+        "null_count": 86153,
+        "total_records": 5819079,
+        "null_percentage": 1.4805,
+        "null_classification": "Operational Missingness (Flight cancelled before departure roll)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "TAXI_OUT": {
+        "null_count": 89047,
+        "total_records": 5819079,
+        "null_percentage": 1.5303,
+        "null_classification": "Operational Missingness (Flight cancelled before departure roll)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "WHEELS_OFF": {
+        "null_count": 89047,
+        "total_records": 5819079,
+        "null_percentage": 1.5303,
+        "null_classification": "Operational Missingness (Flight cancelled before departure roll)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "SCHEDULED_TIME": {
+        "null_count": 6,
+        "total_records": 5819079,
+        "null_percentage": 0.0001,
+        "null_classification": "Missing Data",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64",
+          "int64"
+        ]
+      },
+      "ELAPSED_TIME": {
+        "null_count": 105071,
+        "total_records": 5819079,
+        "null_percentage": 1.8056,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "AIR_TIME": {
+        "null_count": 105071,
+        "total_records": 5819079,
+        "null_percentage": 1.8056,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "DISTANCE": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "WHEELS_ON": {
+        "null_count": 92513,
+        "total_records": 5819079,
+        "null_percentage": 1.5898,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "TAXI_IN": {
+        "null_count": 92513,
+        "total_records": 5819079,
+        "null_percentage": 1.5898,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "SCHEDULED_ARRIVAL": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "ARRIVAL_TIME": {
+        "null_count": 92513,
+        "total_records": 5819079,
+        "null_percentage": 1.5898,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "ARRIVAL_DELAY": {
+        "null_count": 105071,
+        "total_records": 5819079,
+        "null_percentage": 1.8056,
+        "null_classification": "Operational Missingness (Flight cancelled or diverted in-flight)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "DIVERTED": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "CANCELLED": {
+        "null_count": 0,
+        "total_records": 5819079,
+        "null_percentage": 0.0,
+        "null_classification": "Complete (0 nulls)",
+        "inferred_type": "INTEGER",
+        "pandas_types_observed": [
+          "int64"
+        ]
+      },
+      "CANCELLATION_REASON": {
+        "null_count": 5729195,
+        "total_records": 5819079,
+        "null_percentage": 98.4554,
+        "null_classification": "Conditional Domain Logic (Reported only when flight is cancelled, CANCELLED == 1)",
+        "inferred_type": "TEXT",
+        "pandas_types_observed": [
+          "str"
+        ]
+      },
+      "AIR_SYSTEM_DELAY": {
+        "null_count": 4755640,
+        "total_records": 5819079,
+        "null_percentage": 81.725,
+        "null_classification": "Conditional Domain Logic (DOT policy: reported only when arrival delay >= 15 min; not a data defect)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "SECURITY_DELAY": {
+        "null_count": 4755640,
+        "total_records": 5819079,
+        "null_percentage": 81.725,
+        "null_classification": "Conditional Domain Logic (DOT policy: reported only when arrival delay >= 15 min; not a data defect)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "AIRLINE_DELAY": {
+        "null_count": 4755640,
+        "total_records": 5819079,
+        "null_percentage": 81.725,
+        "null_classification": "Conditional Domain Logic (DOT policy: reported only when arrival delay >= 15 min; not a data defect)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "LATE_AIRCRAFT_DELAY": {
+        "null_count": 4755640,
+        "total_records": 5819079,
+        "null_percentage": 81.725,
+        "null_classification": "Conditional Domain Logic (DOT policy: reported only when arrival delay >= 15 min; not a data defect)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      },
+      "WEATHER_DELAY": {
+        "null_count": 4755640,
+        "total_records": 5819079,
+        "null_percentage": 81.725,
+        "null_classification": "Conditional Domain Logic (DOT policy: reported only when arrival delay >= 15 min; not a data defect)",
+        "inferred_type": "REAL",
+        "pandas_types_observed": [
+          "float64"
+        ]
+      }
+    },
+    "departure_delay_analysis": {
+      "records_measured": 5732926,
+      "total_flights": 5819079,
+      "unmeasured_or_null_count": 86153,
+      "min": -82.0,
+      "max": 1988.0,
+      "mean": 9.37,
+      "std": 37.08,
+      "q25": -5.0,
+      "median": -1.0,
+      "q75": 8.0,
+      "q90": 36.0,
+      "q95": 69.0,
+      "negative_count": 3277948,
+      "negative_pct_of_measured": 57.18,
+      "zero_count": 329360,
+      "zero_pct_of_measured": 5.75,
+      "positive_count": 2125618,
+      "positive_pct_of_measured": 37.08,
+      "gt15_count": 1057554,
+      "gt15_pct_of_measured": 18.45,
+      "gt60_count": 330965,
+      "gt60_pct_of_measured": 5.77
+    },
+    "arrival_delay_analysis": {
+      "records_measured": 5714008,
+      "total_flights": 5819079,
+      "unmeasured_or_null_count": 105071,
+      "min": -87.0,
+      "max": 1971.0,
+      "mean": 4.41,
+      "std": 39.27,
+      "q25": -13.0,
+      "median": -4.0,
+      "q75": 9.0,
+      "q90": 36.0,
+      "q95": 68.0,
+      "negative_count": 3500899,
+      "negative_pct_of_measured": 61.27,
+      "zero_count": 126213,
+      "zero_pct_of_measured": 2.21,
+      "positive_count": 2086896,
+      "positive_pct_of_measured": 36.52,
+      "gt15_count": 1063439,
+      "gt15_pct_of_measured": 18.61,
+      "gt60_count": 325591,
+      "gt60_pct_of_measured": 5.7
+    },
+    "cancellation_analysis": {
+      "cancelled_counts": {
+        "0": 5729195,
+        "1": 89884
+      },
+      "total_flights": 5819079,
+      "cancellation_rate_pct": 1.5446,
+      "cancellation_reasons": {
+        "B": 48851,
+        "A": 25262,
+        "C": 15749,
+        "D": 22
+      }
+    },
+    "diversion_analysis": {
+      "diverted_counts": {
+        "0": 5803892,
+        "1": 15187
+      },
+      "total_flights": 5819079,
+      "diversion_rate_pct": 0.261
+    },
+    "delay_causes_analysis": {
+      "AIR_SYSTEM_DELAY": {
+        "count": 1063439,
+        "percentage_of_total_flights": 18.28,
+        "percentage_of_flights_with_arr_delay_ge15": 100.0,
+        "mean_delay_minutes": 13.48,
+        "max": 1134.0,
+        "positive_count": 564826
+      },
+      "SECURITY_DELAY": {
+        "count": 1063439,
+        "percentage_of_total_flights": 18.28,
+        "percentage_of_flights_with_arr_delay_ge15": 100.0,
+        "mean_delay_minutes": 0.08,
+        "max": 573.0,
+        "positive_count": 3484
+      },
+      "AIRLINE_DELAY": {
+        "count": 1063439,
+        "percentage_of_total_flights": 18.28,
+        "percentage_of_flights_with_arr_delay_ge15": 100.0,
+        "mean_delay_minutes": 18.97,
+        "max": 1971.0,
+        "positive_count": 570022
+      },
+      "LATE_AIRCRAFT_DELAY": {
+        "count": 1063439,
+        "percentage_of_total_flights": 18.28,
+        "percentage_of_flights_with_arr_delay_ge15": 100.0,
+        "mean_delay_minutes": 23.47,
+        "max": 1331.0,
+        "positive_count": 556953
+      },
+      "WEATHER_DELAY": {
+        "count": 1063439,
+        "percentage_of_total_flights": 18.28,
+        "percentage_of_flights_with_arr_delay_ge15": 100.0,
+        "mean_delay_minutes": 2.92,
+        "max": 1211.0,
+        "positive_count": 64716
+      }
+    }
+  }
+}
