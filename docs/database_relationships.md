@@ -19,10 +19,10 @@ erDiagram
 
     staging_flights_raw {
         INTEGER raw_id PK
-        INTEGER YEAR
-        INTEGER MONTH
-        INTEGER DAY
-        INTEGER DAY_OF_WEEK
+        TEXT YEAR
+        TEXT MONTH
+        TEXT DAY
+        TEXT DAY_OF_WEEK
         TEXT AIRLINE
         TEXT FLIGHT_NUMBER
         TEXT TAIL_NUMBER
@@ -30,26 +30,26 @@ erDiagram
         TEXT DESTINATION_AIRPORT
         TEXT SCHEDULED_DEPARTURE
         TEXT DEPARTURE_TIME
-        REAL DEPARTURE_DELAY
-        REAL TAXI_OUT
+        TEXT DEPARTURE_DELAY
+        TEXT TAXI_OUT
         TEXT WHEELS_OFF
-        REAL SCHEDULED_TIME
-        REAL ELAPSED_TIME
-        REAL AIR_TIME
-        REAL DISTANCE
+        TEXT SCHEDULED_TIME
+        TEXT ELAPSED_TIME
+        TEXT AIR_TIME
+        TEXT DISTANCE
         TEXT WHEELS_ON
-        REAL TAXI_IN
+        TEXT TAXI_IN
         TEXT SCHEDULED_ARRIVAL
         TEXT ARRIVAL_TIME
-        REAL ARRIVAL_DELAY
-        INTEGER DIVERTED
-        INTEGER CANCELLED
+        TEXT ARRIVAL_DELAY
+        TEXT DIVERTED
+        TEXT CANCELLED
         TEXT CANCELLATION_REASON
-        REAL AIR_SYSTEM_DELAY
-        REAL SECURITY_DELAY
-        REAL AIRLINE_DELAY
-        REAL LATE_AIRCRAFT_DELAY
-        REAL WEATHER_DELAY
+        TEXT AIR_SYSTEM_DELAY
+        TEXT SECURITY_DELAY
+        TEXT AIRLINE_DELAY
+        TEXT LATE_AIRCRAFT_DELAY
+        TEXT WEATHER_DELAY
     }
 
     dim_airlines {
@@ -161,6 +161,8 @@ erDiagram
 ```sql
 fact_flights.source_row_id INTEGER NOT NULL UNIQUE REFERENCES staging_flights_raw(raw_id)
 ```
+- **Text-Based Raw Landing Layer**:
+  `staging_flights_raw` acts as a pure text-based landing mirror. With the exception of `raw_id INTEGER PRIMARY KEY`, all 31 source columns from `flights.csv` are defined with `TEXT` affinity. This ensures zero premature type coercion or numerical formatting loss upon ingestion. All type conversions, ISO time formatting, and numeric casting occur downstream when populating `fact_flights`.
 - **Cardinality Nuance**: 
   - Every row in `fact_flights` references exactly one row in `staging_flights_raw`.
   - However, because the constraint is defined on `fact_flights` pointing to `staging_flights_raw`, the database schema itself guarantees only that a staging row cannot be loaded multiple times; it does not structurally force every staging row to be loaded.
