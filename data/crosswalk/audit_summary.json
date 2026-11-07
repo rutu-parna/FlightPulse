@@ -1,0 +1,16 @@
+{
+  "total_dot_ids": 307,
+  "by_resolution_type": {
+    "BTS_EXACT_DESCRIPTION_MATCH": 293,
+    "FACILITY_RENAME_RECONCILIATION": 12,
+    "COMMERCIAL_DISAMBIGUATION": 2
+  },
+  "integrity_errors": [],
+  "manual_review_items": [
+    "MANUAL REVIEW: DOT 14794 \u2192 SGU: St. George, UT had a physical airport replacement in 2011. The old St George Municipal Airport (FAA LID SGU) and new St. George Regional Airport share the same IATA code SGU and BTS AIRPORT_ID 14794. BTS explicitly maintained the same numeric ID across the transition, confirming this is the correct mapping. Manual review recommended to confirm DOT documentation of the ID continuity before insertion."
+  ],
+  "all_in_dim_airports": true,
+  "duplicate_dot_ids": 0,
+  "unresolved_dot_ids": 0,
+  "output_csv": "data/crosswalk\\dot_to_iata_mappings.csv"
+}
